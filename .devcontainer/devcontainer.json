@@ -1,0 +1,16 @@
+{
+  "name": "hotel-adr-mlr",
+  "image": "rocker/tidyverse:4.4.1",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": ["REditorSupport.r"],
+      "settings": {
+        "r.rterm.linux": "/usr/local/bin/R",
+        "r.rpath.linux": "/usr/local/bin/R",
+        "r.lsp.enabled": true
+      }
+    }
+  },
+  "postCreateCommand": "Rscript Scripts/00_setup.R"
+}
