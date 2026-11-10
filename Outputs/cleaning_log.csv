@@ -1,21 +1,19 @@
-step,rows,cols,note,rows_removed
-0 raw file,43781,90,as downloaded,NA
-setting PRICE_MIN,43781,90,20,0
-setting PRICE_MAX,43781,90,1000,0
-setting INCLUDE_REVIEWS,43781,90,FALSE,0
-setting MISSING_DROP_PCT,43781,90,10,0
-setting TOP_NEIGHBOURHOODS,43781,90,15,0
-setting TOP_PROPERTY_TYPES,43781,90,8,0
-setting SAMPLE_N,43781,90,NULL (keep all rows),0
-setting LAX,43781,90,"lat 33.9416, lon -118.4085",0
-setting SEED,43781,90,2026,0
-setting RAW_FILE,43781,90,los_angeles_airbnb_listings.csv.gz,0
-1 select columns,43781,18,18 of 90 kept,0
-2 one row per listing id,43781,18,,0
-3 missing price,36687,18,removed 0 listings with no price,7094
-4 price range,34601,18,kept $20-$1000; removed 0,2086
-5 drop variables over missing threshold,34601,18,>10% missing: none,0
-6 parse bathrooms,34601,20,"bathrooms_text -> bathrooms (number), shared_bath (flag)",0
-7 derived variables,34601,20,"n_amenities, has_license, dist_lax_mi (miles from LAX)",0
-8 missing values,34582,20,"hot-deck bedrooms=77, beds=880, bathrooms=62; listwise deleted 0 rows",19
-9 transformations,34582,20,"neighbourhood_grp (top 15 + Other), property_type_grp (top 8 + Other), room_type as factor",0
+"step","rows","cols","note","rows_removed"
+"0 raw file",43781,90,"as downloaded",NA
+"setting PRICE_MIN",43781,90,"20",0
+"setting PRICE_MAX",43781,90,"1000",0
+"setting MISSING_PCT",43781,90,"10",0
+"setting TOP_NEIGHBORHOODS",43781,90,"15",0
+"setting TOP_PROPERTY_TYPES",43781,90,"8",0
+"setting LAX",43781,90,"lat 33.9416, lon -118.4085",0
+"setting SEED",43781,90,"2026",0
+"setting RAW_FILE",43781,90,"los_angeles_airbnb_listings.csv.gz",0
+"1 select columns",43781,18,"18 of 90 kept; host t/f flags converted to TRUE/FALSE",0
+"2 one row per listing id",43781,18,"",0
+"3 missing price",36687,18,"removed 7094 listings with no price",7094
+"4 price range",34601,18,"kept $20-$1000; removed 2086",2086
+"5 drop variables over missing threshold",34601,18,">10% missing: none",0
+"6 parse bathrooms",34601,20,"bathrooms_text -> bathrooms (number), shared_bath (flag)",0
+"7 derived variables",34601,20,"n_amenities, has_license, dist_lax_mi (miles from LAX)",0
+"8 missing values",34582,20,"hot-deck bedrooms=77, beds=880, bathrooms=62; listwise deleted 19 rows",19
+"9 transformations",34582,20,"neighborhood_grp (top 15 + Other), property_type_grp (top 8 + Other), room_type as factor",0
