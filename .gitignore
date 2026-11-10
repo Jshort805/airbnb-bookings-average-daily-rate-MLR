@@ -48,3 +48,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# raw Airbnb csv is 125 MB (over the GitHub 100 MB limit); the .gz copy is committed
+Data/raw/*.csv

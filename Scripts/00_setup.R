@@ -1,13 +1,12 @@
-# 00_setup.R -- install the packages this project uses.
-# Run once per environment (the devcontainer does it automatically).
-# tidyverse already ships with the rocker/tidyverse image.
+#Install the packages for this project
+#Run once per environment (the devcontainer does it automatically).
 
-pkgs <- c("regclass", "caret", "here", "janitor", "languageserver", "renv")
-missing_pkgs <- setdiff(pkgs, rownames(installed.packages()))
+pkgs<- c("regclass", "caret", "here", "janitor", "languageserver", "renv")
+missing_pkgs<- setdiff(pkgs, rownames(installed.packages()))
 if (length(missing_pkgs) > 0) {
-  install.packages(missing_pkgs, repos = "https://cloud.r-project.org")
+  install.packages(missing_pkgs)
 }
 
-# After the first successful run, lock package versions once with:
-#   renv::init()       # creates renv.lock and a project library
-#   renv::snapshot()   # re-run whenever a package is added
+#After the first successful run, lock package versions once in terminal with:
+#renv::init()      
+#renv::snapshot()  

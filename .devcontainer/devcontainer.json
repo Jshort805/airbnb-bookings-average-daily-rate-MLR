@@ -1,5 +1,5 @@
 {
-  "name": "hotel-adr-mlr",
+  "name": "airbnb-adr-mlr",
   "image": "rocker/tidyverse:4.4.1",
   "remoteUser": "root",
   "customizations": {
