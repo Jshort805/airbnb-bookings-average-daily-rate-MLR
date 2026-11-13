@@ -7,7 +7,7 @@
 "beds","integer",19
 "minimum_nights","integer",77
 "latitude","numeric",24262
-"longitude","numeric",26432
+"longitude","numeric",26429
 "host_is_superhost","logical",2
 "host_identity_verified","logical",2
 "hosts_time_as_host_years","integer",16
