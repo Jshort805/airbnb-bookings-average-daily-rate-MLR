@@ -15,18 +15,10 @@ TOP_PROPERTY_TYPES <- 8
 lax_lat <- 33.9416
 lax_lon <- -118.4085
 
-## Part 2: Read the raw file and look at it
+## Part 2: Read the raw file
 raw <- read.csv("Data/raw/los_angeles_airbnb_listings.csv.gz", na.strings = c("", "NA"))
 cat("Raw file:", nrow(raw), "rows x", ncol(raw), "columns\n")
 if (nrow(raw) != 43781 || ncol(raw) != 90) stop("Use the committed 2026-09-14 snapshot")
-cat("Duplicate listing ids:", sum(duplicated(raw$id)), "\n")
-
-price_raw <- as.numeric(gsub("[$,]", "", raw$price))
-cat("Raw price quantiles:\n")
-print(round(quantile(price_raw, c(0, .01, .05, .5, .95, .99, 1), na.rm = TRUE)))
-cat("Listings priced $1,000 or more:", sum(price_raw >= 1000, na.rm = TRUE), "\n")
-cat("Median raw price by room type:\n")
-print(tapply(price_raw, raw$room_type, median, na.rm = TRUE))
 
 ## Part 3: Clean
 # Step 1: keep only the columns we need
@@ -104,6 +96,3 @@ dict <- data.frame(variable = names(df), type = sapply(df, class),
 write.csv(dict, "Data/clean/data_dictionary_draft.csv", row.names = FALSE)
 
 cat("Final analytic file:", nrow(df), "rows x", ncol(df), "columns\n")
-print(summary(df))
-cat("Median price by room type, cleaned:\n")
-print(tapply(df$price, df$room_type, median))
