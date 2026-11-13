@@ -1,0 +1,38 @@
+"variable","level","n","percent"
+"room_type","Entire home/apt",25225,72.9
+"room_type","Hotel room",351,1
+"room_type","Private room",8730,25.2
+"room_type","Shared room",276,0.8
+"property_type_grp","Entire condo",1213,3.5
+"property_type_grp","Entire guest suite",979,2.8
+"property_type_grp","Entire guesthouse",2557,7.4
+"property_type_grp","Entire home",10141,29.3
+"property_type_grp","Entire rental unit",8179,23.7
+"property_type_grp","Other",3776,10.9
+"property_type_grp","Private room in home",4672,13.5
+"property_type_grp","Private room in rental unit",1809,5.2
+"property_type_grp","Room in hotel",1256,3.6
+"neighborhood_grp","Alhambra",564,1.6
+"neighborhood_grp","Beverly Hills",555,1.6
+"neighborhood_grp","Burbank",551,1.6
+"neighborhood_grp","Culver City",566,1.6
+"neighborhood_grp","Downtown",823,2.4
+"neighborhood_grp","Exposition Park",846,2.4
+"neighborhood_grp","Glendale",609,1.8
+"neighborhood_grp","Hollywood",1310,3.8
+"neighborhood_grp","Hollywood Hills",486,1.4
+"neighborhood_grp","Long Beach",1544,4.5
+"neighborhood_grp","Mid-City",484,1.4
+"neighborhood_grp","Other",22445,64.9
+"neighborhood_grp","Pasadena",628,1.8
+"neighborhood_grp","Santa Monica",1024,3
+"neighborhood_grp","Venice",1075,3.1
+"neighborhood_grp","West Hollywood",1072,3.1
+"host_is_superhost","FALSE",20103,58.1
+"host_is_superhost","TRUE",14479,41.9
+"host_identity_verified","FALSE",442,1.3
+"host_identity_verified","TRUE",34140,98.7
+"shared_bath","FALSE",31081,89.9
+"shared_bath","TRUE",3501,10.1
+"has_license","FALSE",24158,69.9
+"has_license","TRUE",10424,30.1
