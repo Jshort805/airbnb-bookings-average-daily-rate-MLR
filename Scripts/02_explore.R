@@ -1,8 +1,6 @@
-# 02_explore.R -- Summaries and charts for the cleaned Airbnb Los Angeles data
 # Input : Data/clean/airbnb_analytic.csv  (made by 01_clean.R)
 # Output: Outputs/summary_numeric.csv, Outputs/summary_categorical.csv,
 #         Outputs/fig1 to fig6 (.png charts)
-# Run from the project root:  Rscript Scripts/02_explore.R
 
 ## Part 1: Read the cleaned data
 df <- read.csv("Data/clean/airbnb_analytic.csv")
@@ -11,8 +9,8 @@ n <- nrow(df)
 cat("Cleaned file:", n, "rows x", ncol(df), "columns\n")
 df$log_price <- log(df$price)
 
-## Part 2: Descriptive summaries
-# Numeric variables: sample size, missing count, mean, median, sd, range
+## Part 2: Descriptive Statistics
+# sample size, missing count, mean, median, sd, range
 num_vars <- c("price", "log_price", "accommodates", "bedrooms", "beds", "bathrooms",
               "n_amenities", "minimum_nights", "dist_lax_mi",
               "hosts_time_as_host_years", "calculated_host_listings_count")
@@ -45,9 +43,6 @@ write.csv(summary_categorical, "Outputs/summary_categorical.csv", row.names = FA
 print(summary_categorical)
 
 # Numbers to quote in the report captions
-skew <- function(x) mean((x - mean(x))^3) / sd(x)^3
-cat("Skewness of price:", round(skew(df$price), 2),
-    "; of log(price):", round(skew(df$log_price), 2), "\n")
 cat("Median price by room type:\n")
 print(tapply(df$price, df$room_type, median))
 cor_vars <- setdiff(num_vars, c("price", "log_price"))
@@ -56,7 +51,7 @@ cat("Correlation with log(price):\n")
 print(round(cors, 2))
 
 
-# Data issue to explain in the report: many listings are long-stay (monthly) rentals
+# Data issue: many listings are long-stay (monthly) rentals
 long_stay <- df$minimum_nights >= 30
 cat("Listings with a 30+ night minimum:", round(mean(long_stay) * 100, 1), "%; median price",
     median(df$price[long_stay]), "vs", median(df$price[!long_stay]), "for shorter stays\n")
@@ -65,12 +60,11 @@ cat("Listings with a 30+ night minimum:", round(mean(long_stay) * 100, 1), "%; m
 # should decide whether to keep long stays, or run a sensitivity check without them.
 ## Part 3: Charts (each saved as a PNG in Outputs/)
 blue <- "steelblue"
-faint <- rgb(0, 0, 0, 0.08)  # see-through points so overlapping dots stay readable
+faint <- rgb(0, 0, 0, 0.08)  
 
-# Fig 1: outcome distribution, raw and logged
-# What it shows: price is strongly right-skewed (mean $255 vs median $202, skewness 1.44).
-#   A few expensive listings stretch the right tail. After taking logs the shape is much more
-#   symmetric (skewness -0.14).
+# Fig 1: outcome distribution
+# What it shows: price is strongly right-skewed (mean $255 vs median $202). A few expensive
+#   listings stretch the right tail. After taking logs the shape is more symmetric.
 # Why it matters: a log-price outcome fits MLR assumptions better (more even residuals), so
 #   model log(price) and report effects as approximate percent changes.
 png("Outputs/fig1_price_distribution.png", width = 1400, height = 600, res = 130)
@@ -86,7 +80,7 @@ invisible(dev.off())
 #   rooms (1%), versus $86 for private rooms (25%) and $36 for shared rooms (0.8%). Boxes
 #   overlap little between private rooms and entire homes. The y-axis is log scale.
 # Why it matters: room type separates prices clearly, so it belongs in the model. Hotel and
-#   shared rooms are tiny groups, so their estimates will be uncertain.
+#   shared rooms are tiny groups, so their estimates will be unreliable.
 png("Outputs/fig2_price_by_room_type.png", width = 1000, height = 700, res = 130)
 boxplot(price ~ room_type, data = df, log = "y", col = blue, las = 1,
         main = paste0("Price by room type (n = ", n, ")"),

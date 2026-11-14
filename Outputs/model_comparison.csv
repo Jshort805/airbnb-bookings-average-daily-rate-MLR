@@ -1,0 +1,5 @@
+"model","n_terms","adj_r2","cv_rmse_log"
+"Baseline",0,0,0.7645
+"Small",19,0.575,0.4988
+"Full",39,0.696,0.4222
+"Reduced",37,0.696,0.4222

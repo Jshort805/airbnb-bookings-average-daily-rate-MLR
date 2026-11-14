@@ -1,0 +1,3 @@
+"model","rmse_usd","mae_usd","r2_log_price"
+"Baseline (average only)",199.69,139.1,0
+"Final: Reduced",134.04,81.78,0.668

@@ -1,0 +1,39 @@
+"term","estimate","std_error","p_value","pct_effect"
+"(Intercept)",4.9992,0.0132,0,NA
+"room_typeHotel room",-0.2826,0.0333,2.19e-17,-24.6
+"room_typePrivate room",-0.4156,0.0172,1.41e-127,-34
+"room_typeShared room",-0.9633,0.0335,1.13e-179,-61.8
+"property_type_grpEntire condo",0.0286,0.0147,0.052,2.9
+"property_type_grpEntire guest suite",-0.2143,0.0168,4.75e-37,-19.3
+"property_type_grpEntire guesthouse",-0.1623,0.0116,1.07e-44,-15
+"property_type_grpEntire rental unit",-0.0852,0.0083,6e-25,-8.2
+"property_type_grpOther",-0.0318,0.0115,0.00553,-3.1
+"property_type_grpPrivate room in home",-0.1567,0.0186,4.53e-17,-14.5
+"property_type_grpPrivate room in rental unit",-0.1416,0.0209,1.22e-11,-13.2
+"property_type_grpRoom in hotel",0.4622,0.0234,6.66e-86,58.8
+"neighborhood_grpAlhambra",-0.0398,0.0204,0.0511,-3.9
+"neighborhood_grpBeverly Hills",0.3921,0.0203,2.45e-82,48
+"neighborhood_grpBurbank",0.1675,0.021,1.75e-15,18.2
+"neighborhood_grpCulver City",0.1767,0.0205,8.17e-18,19.3
+"neighborhood_grpDowntown",0.0174,0.0171,0.309,1.8
+"neighborhood_grpExposition Park",-0.5617,0.02,1.4e-171,-43
+"neighborhood_grpGlendale",0.1687,0.0194,3.92e-18,18.4
+"neighborhood_grpHollywood",-0.0649,0.0138,2.48e-06,-6.3
+"neighborhood_grpHollywood Hills",0.1826,0.022,1.22e-16,20
+"neighborhood_grpLong Beach",-0.0569,0.013,1.16e-05,-5.5
+"neighborhood_grpMid-City",-0.2158,0.0219,5.99e-23,-19.4
+"neighborhood_grpPasadena",0.094,0.0194,1.21e-06,9.9
+"neighborhood_grpSanta Monica",0.2651,0.0158,1.64e-62,30.4
+"neighborhood_grpVenice",0.2168,0.0153,2.2e-45,24.2
+"neighborhood_grpWest Hollywood",0.1607,0.0155,3.34e-25,17.4
+"accommodates",0.0622,0.0021,2.93e-181,6.4
+"bedrooms",0.1462,0.0046,1.73e-220,15.7
+"beds",-0.0229,0.003,1.44e-14,-2.3
+"bathrooms",0.0447,0.0041,3.91e-27,4.6
+"shared_bathTRUE",-0.2791,0.0111,7.04e-139,-24.4
+"n_amenities",0.0035,2e-04,2.2e-99,0.3
+"minimum_nights",-0.0082,1e-04,0,-0.8
+"has_licenseTRUE",0.1734,0.0064,4.45e-159,18.9
+"dist_lax_mi",-0.0069,3e-04,3.78e-108,-0.7
+"hosts_time_as_host_years",-0.0016,7e-04,0.0184,-0.2
+"calculated_host_listings_count",-8e-04,1e-04,3.9e-19,-0.1
